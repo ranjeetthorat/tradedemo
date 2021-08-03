@@ -85,9 +85,7 @@
                     <button  onclick="window.print()" class="btn btn-md btn-outline-secondary ">print</button></h3> 
 
   
-                 <br><br><h4>Name:    <?php if(isset($_GET['cname'])) echo $_GET['cname'];?> </h4>
-             
-  
+                 <br><br>
       <?php  if(isset($_GET['cid'])) {
          $todate=$_GET['todate'] ; 
          $fromdate=$_GET['fromdate'];
@@ -97,6 +95,9 @@
       ?>
 
   <table class="table table-borderd table-sm">
+  <h4>Name:    <?php if(isset($_GET['cname'])) echo $_GET['cname'];?> </h4>
+             
+  
     <thead>
       <tr>   
         <th style="visibility:hidden">tid</th>

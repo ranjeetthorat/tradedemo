@@ -143,10 +143,10 @@ a{
             <a href="sharetable.php">2.Details</a>
           </div>
         </div>
-      <div class="zoom"><a href="trading.php">Trading</a></div>
-      <div class="zoom"><a href="tradingtable.php">Trading-trade</a></div><br>
-       <div class="zoom"><a href="infotable.php">Information</a></div>
-      <div class="zoom"><a href=""></a>d</div>
+      <div class="zoom"><a href="trading.php">First-Trading</a></div>
+      <div class="zoom"><a href="tradingtable.php">Second-Trading</a></div><br>
+       <div class="zoom"><a href="infotable.php">Third-Trading</a></div>
+      <div class="zoom"><a href="reports.php">Fourth-Trading</a></div>
       <div class="zoom"><a href=""></a>e</div>
       <div class="zoom"><a href=""></a>f</div> 
        </div>      

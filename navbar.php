@@ -17,13 +17,16 @@
             <a class="nav-link" href="sharetable.php">Share</a>
         </li>
         <li class="nav-item ml-2">
-          <a class="nav-link" href="trading.php">Trading</a>
+          <a class="nav-link" href="trading.php">first-Trading</a>
       </li>
       <li class="nav-item ml-2">
-        <a class="nav-link" href="tradingtable.php">Trading Table</a>
+        <a class="nav-link" href="tradingtable.php">Second-Trading</a>
     </li>
     <li class="nav-item ml-2">
-        <a class="nav-link" href="infotable.php">Information</a>
+        <a class="nav-link" href="infotable.php">Third-Trading</a>
+    </li>
+    <li class="nav-item ml-2">
+        <a class="nav-link" href="reports.php">Fourth-Trading</a>
     </li>
 </div>
 </nav>
