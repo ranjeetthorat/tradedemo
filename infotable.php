@@ -42,14 +42,7 @@
            display: none;
       }
     }
-  form{
-    display: flex;
-    flex-direction: row;
-  }
-  label,input{
-    display: block;
-   
-  }
+ 
  
     
   </style>
@@ -64,7 +57,7 @@
   
  
    
-  <form >
+ 
   <label>Select Customer Name:</label>
  
                     <select required onchange="getTable(event)" id="customer"  name="cid" 
@@ -91,7 +84,7 @@
                     <button type="submit" name="btn" class="btn btn-md btn-outline-secondary">submit</button>&nbsp;
                     <button  onclick="window.print()" class="btn btn-md btn-outline-secondary ">print</button></h3> 
 
-  </form>
+  
                  <br><br><h4>Name:    <?php if(isset($_GET['cname'])) echo $_GET['cname'];?> </h4>
              
   
