@@ -40,6 +40,13 @@
     table{
       width: 600px;
     }
+.design{
+  width: 100px;
+      padding: 0px;
+      border: none;
+      font-size: 15px;
+      outline: none;  
+}
   </style>
    </head>
    <?php include('db.php') ?>
@@ -63,7 +70,7 @@
                     </select>
                   
                  <br><br>
-                           
+             
   <?php
         function getData($data)
         {
@@ -80,8 +87,7 @@
 
   <table class="table table-borderd table-sm">
   <h4> Name:   <?php if(isset($_GET['cname'])) echo $_GET['cname'];?> </h4>
-  <h4>date:<?php if(isset($_GET['buy_date']) );else echo date('Y-m-d',$_GET['buy_date']); ?></h4>  
-        
+                
     <thead>
       <tr>   
         <th style="visibility:hidden">tid</th>
@@ -90,13 +96,11 @@
         <th>buy_bcharge</th>
         <th>buyqty</th>
         <th>Buy_price</th>
-        <th>temp_Buyprice</th>
         <th>Buy_total</th>
-                
+        <th>Buy_date</th>         
         <th>sell_bcharge</th>
         <th>sell_qty</th>
         <th>sell_price</th>
-        <th>temp_sellprice</th>
         <th>sell_total</th>
         <th>sell_date</th>  
         
@@ -123,21 +127,19 @@
         value=<?php echo $row['buyqty'];  ?>></td>
         <td><input type="text"  <?php echo getData($row['buyprice']); ?> name="b" id="b"
         value=<?php echo $row['buyprice'];  ?>></td>
-        <td><input type="text"  <?php echo getData($row['temp_buyprice']); ?> name="k" id="k"
-        value=<?php echo $row['temp_buyprice'];  ?>></td>
-        <td><input type="text"  <?php echo getData($row['buy_total']); ?> name="c" id="c"
+        <td ><input class="design" type="text"  <?php echo getData($row['buy_total']); ?> name="c" id="c"
          value=<?php echo $row['buy_total'];  ?>></td>   
-         <td><input type="text"  <?php echo getData($row['sell_bcharge']); ?> name="sellbcharge" 
+        <td ><input class="design" type="text"  <?php  echo getData($row['buy_date']); ?> name="d" id="d"
+        value=<?php if($row['buy_date']==0) echo "0"; else echo date('Y-m-d',$row['buy_date']); ?>></td>  
+        <td ><input type="text"  <?php echo getData($row['sell_bcharge']); ?> name="sellbcharge" 
         value=<?php echo $row['sell_bcharge'];  ?>></td>
         <td><input type="text"  <?php echo getData($row['sell_qty']); ?> name="e" id="e"
         value=<?php echo $row['sell_qty'];  ?>></td>
         <td><input type="text"  <?php echo getData($row['sell_price']); ?> name="f" id="f"
         value=<?php echo $row['sell_price'];  ?>></td>
-        <td><input type="text"  <?php echo getData($row['temp_sellprice']); ?> name="j" id="j"
-        value=<?php echo $row['temp_sellprice'];  ?>></td>
-        <td><input type="text" <?php echo getData($row['sell_total']); ?> name="g" id="g"
+        <td ><input class="design" type="text" <?php echo getData($row['sell_total']); ?> name="g" id="g"
         value=<?php echo $row['sell_total'];  ?>></td>   
-        <td><input type="text"  <?php echo getData($row['sell_date']); ?> name="h" id="h"
+        <td ><input class="design" type="text"  <?php echo getData($row['sell_date']); ?> name="h" id="h"
         value=<?php  if($row['sell_date']==0) echo "0"; else echo date('Y-m-d',$row['sell_date']); ?>></td>    
         <td>
         <td><input type="text" hidden <?php echo getData($row['final_total']); ?> name="i" id="i"
@@ -162,8 +164,8 @@
         let table=event.target.value;
        let name= event.target.options[event.target.selectedIndex].text
       // console.log(name)
-         window.location.href=`reports.php?cid=${table}&cname=${name}`;
-        }
+        window.location.href=`reports.php?cid=${table}&cname=${name}`;
+       }
      
       </script>
     </body>

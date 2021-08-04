@@ -145,8 +145,9 @@ a{
         </div>
       <div class="zoom"><a href="trading.php">First-Trading</a></div>
       <div class="zoom"><a href="tradingtable.php">Second-Trading</a></div><br>
-       <div class="zoom"><a href="infotable.php">Third-Trading</a></div>
-      <div class="zoom"><a href="reports.php">Fourth-Trading</a></div>
+       <div class="zoom"><a href="infotable.php">
+         pending-Trade</a></div>
+      <div class="zoom"><a href="reports.php">Reports</a></div>
       <div class="zoom"><a href=""></a>e</div>
       <div class="zoom"><a href=""></a>f</div> 
        </div>      

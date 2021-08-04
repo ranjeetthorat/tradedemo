@@ -42,6 +42,14 @@
            display: none;
       }
     }
+    form{
+      display: flex;
+      flex-flow: row wrap;
+      align-items: center;
+    }
+    input,label{
+      vertical-align:middle;
+    }
  
  
     
