@@ -9,7 +9,8 @@
         <link rel="stylesheet" href="asset/bootstrap.min.css">
   <script src="asset/jquery.js"></script>
   <script src="asset/bootstrap.bundle.min.js"></script>  
-       <style>          
+       <style> 
+           
        </style>
       </head>    
     <body>
@@ -27,9 +28,9 @@
                       </div> -->
                     <div class="row">
                   
-                    <div class="form-group col"> 
+                    <div class="form-group col-lg md-3"> 
                         <label>Select Customer Name</label> 
-                    <select required onchange="getBrockage(event)" id="customer"  name="customer"  class="form-control form-control-sm col-md-6">
+                    <select required onchange="getBrockage(event)" id="customer"  name="customer"  class="form-control form-control-sm col-md-11">
                     <option value="">Select customer name</option>
                   <?php 
 
@@ -47,7 +48,7 @@
                     
                     <div class="form-group col" >  
                         <label>Select Share Name</label>
-                    <select required onchange="getQty(event)" id="share"  name="share"  class="form-control form-control-sm col-md-6">
+                    <select required onchange="getQty(event)" id="share"  name="share"  class="form-control form-control-sm col-md-11">
                     <option value="">Select Share</option>
                     
                
@@ -93,15 +94,15 @@
                        <input type="text"  name="total" id="total" required class="form-control form-control-sm" placeholder="Total">
                      </div> 
                     </div>
-                    
-                    <select required id="select"  name="select"  class="form-control form-control-sm col-md-6">
+
+                    <select required id="select"  name="select"  class="form-control form-control-sm col-md-6 ">
                     <option value="buy">Buy</option>
                     <option value="sell" >Sell</option>
                     </select>
 <br>
                    
                     <div class="form-group">
-                        <button type="submit" class="btn btn-md btn-outline-secondary">Submit</button>
+                        <button type="submit" class="btn btn-md btn-outline-secondary ">Submit</button>
                      </div>
 
                     </form>
