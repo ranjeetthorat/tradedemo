@@ -25,7 +25,9 @@
                         <label for="" hidden>customer id</label>
                         <input type="text"  name="cid" id="cid"  class="form-control form-control-sm" placeholder="your id">
                       </div> -->
-                    <div class="form-group"> 
+                    <div class="row">
+                  
+                    <div class="form-group col"> 
                         <label>Select Customer Name</label> 
                     <select required onchange="getBrockage(event)" id="customer"  name="customer"  class="form-control form-control-sm col-md-6">
                     <option value="">Select customer name</option>
@@ -40,9 +42,10 @@
                    <?php } ?>
                     </select> 
                     </div>
-
-
-                    <div class="form-group" >  
+                  
+                   
+                    
+                    <div class="form-group col" >  
                         <label>Select Share Name</label>
                     <select required onchange="getQty(event)" id="share"  name="share"  class="form-control form-control-sm col-md-6">
                     <option value="">Select Share</option>
@@ -59,31 +62,39 @@
                    <?php } ?>
                     </select> 
                     </div>
+                    </div>
 
-
-
-                    <div class="form-group">
+                    <div class="row">
+                    <div class="form-group col">
                               <label for=""> Brockage Charges</label>
                               <input type="text"  name="bcharges" id="bcharges" required class="form-control form-control-sm" placeholder="Brockage charges">
                     </div> 
-
+                   
                    
                     
-                    <div class="form-group">
+                    <div class="form-group col">
                        <label for="">Share Quantity</label>
                         <input type="number" min="1" name="qty" id="qty" required class="form-control form-control-sm" placeholder="Share Quantity">
                     </div> 
-                   
-                    <div class="form-group">
+                    
+                    </div>
+
+                    <div class="row">
+                    
+                    <div class="form-group col">
                        <label for="">Share Price</label>
                       <input type="text" onkeyup="getTotal(event)" name="price" id="price" required class="form-control form-control-sm" placeholder="Price">
                      </div> 
-                     <div class="form-group">
+                   
+
+                    
+                     <div class="form-group col">
                        <label for="">Total</label>
                        <input type="text"  name="total" id="total" required class="form-control form-control-sm" placeholder="Total">
                      </div> 
-
-                     <select required id="select"  name="select"  class="form-control form-control-sm col-md-6">
+                    </div>
+                    
+                    <select required id="select"  name="select"  class="form-control form-control-sm col-md-6">
                     <option value="buy">Buy</option>
                     <option value="sell" >Sell</option>
                     </select>
