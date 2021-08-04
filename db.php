@@ -1,5 +1,5 @@
 <?php
-$connection = mysqli_connect('localhost', 'root', '','market','3325');
+$connection = mysqli_connect('localhost', 'root', '','market','3306');
 if (!$connection){
     die("Database Connection Failed" . mysqli_error($connection));
 }
