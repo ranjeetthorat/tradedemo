@@ -23,10 +23,10 @@
         <a class="nav-link" href="tradingtable.php">Second-Trading</a>
     </li>
     <li class="nav-item ml-2">
-        <a class="nav-link" href="infotable.php">pending-Trade</a>
+        <a class="nav-link" href="infotable.php">Complete Trading</a>
     </li>
     <li class="nav-item ml-2">
-        <a class="nav-link" href="reports.php">Fourth-Trading</a>
+        <a class="nav-link" href="reports.php">Pending trade</a>
     </li>
 </div>
 </nav>

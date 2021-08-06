@@ -49,8 +49,16 @@
 }
   </style>
    </head>
-   <?php include('db.php') ?>
-   <?php include("navbar.php") ?>
+   <?php include('db.php'); ?>
+   <?php include("navbar.php") ;
+   
+   function isSell($value){
+    if($value == '0' || $value == 0 )
+    return true;
+    return false;
+  }
+   
+   ?>
    <body>
  
   <h2 style="text-align: center;"><strong>Trading Details</strong></h2>  
@@ -90,19 +98,16 @@
                 
     <thead>
       <tr>   
-        <th style="visibility:hidden">tid</th>
+        <th>tid</th>
+        <th>Share Name</th>
+        <th>QTY</th>
+        <th>Price</th>
+        <th>Total</th>
+        <th>status</th>
+        <th>date</th>         
+        <th>current price</th>
+        <th>options</th>
       
-        <th>sname</th>
-        <th>buy_bcharge</th>
-        <th>buyqty</th>
-        <th>Buy_price</th>
-        <th>Buy_total</th>
-        <th>Buy_date</th>         
-        <th>sell_bcharge</th>
-        <th>sell_qty</th>
-        <th>sell_price</th>
-        <th>sell_total</th>
-        <th>sell_date</th>  
         
       </tr>
       <tbody >
@@ -114,45 +119,39 @@
   $result=mysqli_query($connection,$sql) ;  
   ?>
       <?php
+      $sr=1;
     while($row=mysqli_fetch_assoc($result)){
         ?>  
+        <form action="updatetrade.php" method="post">
     <tr>
-      <form action="updatetable.php" method="Post">
-        <td ><input class="tid" hidden name="tid" type="text" readonly value="<?php echo $row['tid'];  ?>"></td>     
+      
+      
+        <td >
+          <input class="tid" hidden name="tid" type="text" readonly value="<?php echo $row['tid'];  ?>">
+        <?php echo $sr++; ?></td>     
         <td><?php echo $row['sname'];  ?></td>
-        <td><input type="text"  <?php echo getData($row['buy_bcharge']); ?> name="buybcharge" 
-        value=<?php echo $row['buy_bcharge'];  ?>></td>
-        <td><input  type="text" <?php echo getData($row['buyqty']); ?> name="a"  id="a"
-        value=<?php echo $row['buyqty'];  ?>></td>
-        <td><input type="text"  <?php echo getData($row['buyprice']); ?> name="b" id="b"
-        value=<?php echo $row['buyprice'];  ?>></td>
-        <td ><input class="design" type="text"  <?php echo getData($row['buy_total']); ?> name="c" id="c"
-         value=<?php echo $row['buy_total'];  ?>></td>   
-        <td ><input class="design" type="text"  <?php  echo getData($row['buy_date']); ?> name="d" id="d"
-        value=<?php if($row['buy_date']==0) echo "0"; else echo date('Y-m-d',$row['buy_date']); ?>></td>  
-        <td ><input type="text"  <?php echo getData($row['sell_bcharge']); ?> name="sellbcharge" 
-        value=<?php echo $row['sell_bcharge'];  ?>></td>
-        <td><input type="text"  <?php echo getData($row['sell_qty']); ?> name="e" id="e"
-        value=<?php echo $row['sell_qty'];  ?>></td>
-        <td><input type="text"  <?php echo getData($row['sell_price']); ?> name="f" id="f"
-        value=<?php echo $row['sell_price'];  ?>></td>
-        <td ><input class="design" type="text" <?php echo getData($row['sell_total']); ?> name="g" id="g"
-        value=<?php echo $row['sell_total'];  ?>></td>   
-        <td ><input class="design" type="text"  <?php echo getData($row['sell_date']); ?> name="h" id="h"
-        value=<?php  if($row['sell_date']==0) echo "0"; else echo date('Y-m-d',$row['sell_date']); ?>></td>    
-        <td>
-        <td><input type="text" hidden <?php echo getData($row['final_total']); ?> name="i" id="i"
-        value=<?php echo $row['final_total'];  ?>></td>
+        <td>  <?php if(isSell($row['sell_date']))  echo $row['buyqty']; else echo $row['sell_qty'];    ?> </td>
+        <td><?php if(isSell($row['sell_date']))  echo $row['buyprice']; else echo $row['sell_price'];    ?></td>
+        <td><?php if(isSell($row['sell_date']))  echo $row['buy_total']; else echo $row['sell_total'];  ?></td>
+        <td><?php if(isSell($row['sell_date']))  echo "buy"; else echo "sell";  ?></td>
+        <td><?php if(isSell($row['sell_date']))   echo date('Y-m-d',$row['buy_date']); else echo date('Y-m-d',$row['sell_date']);  ?></td>
+        <td><input type="text"></td>
+        
+       
        <td> <button type="submit" class="btn btn-md btn-outline-secondary" name="edit"> Save</button>
 
       
           </td>  
-          </form>   
-      </tr>             
-    </tr>  
+         
+      </tr>  
+    </form>           
+     
     <?php } ?>
      </tbody>
+<?php
 
+
+?>
      </table>
 <?php } ?>
 

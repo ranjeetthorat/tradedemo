@@ -6,4 +6,7 @@ $today=time();
  echo date('Y.m.d',$today);
  
  ?> 
+ <script>
+window.location.href="dash.php"
+</script>
  

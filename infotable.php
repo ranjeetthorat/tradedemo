@@ -58,7 +58,7 @@
    <?php include('db.php') ?>
    <?php include("navbar.php") ?>
    <body>
-   <h2 style="text-align: center;"><strong> Details</strong></h2>  <br>
+   <h2 style="text-align: center;"><strong> Trading report</strong></h2>  <br>
    
    <form action="infotable.php" name="report" method="get">
   
@@ -66,7 +66,7 @@
  
    
  
-  <label>Select Customer Name:</label>
+  <label>Select Cust Name:</label>
  
                     <select required onchange="getTable(event)" id="customer"  name="cid" 
                      class="form-control form-control-sm col-md-2" >
