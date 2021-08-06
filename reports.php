@@ -118,8 +118,7 @@
         ?>  
     <tr>
       <form action="updatetable.php" method="Post">
-        <td ><input class="tid" hidden name="tid" type="text" readonly value="<?php echo $row['tid'];  ?>"></td>
-      
+        <td ><input class="tid" hidden name="tid" type="text" readonly value="<?php echo $row['tid'];  ?>"></td>     
         <td><?php echo $row['sname'];  ?></td>
         <td><input type="text"  <?php echo getData($row['buy_bcharge']); ?> name="buybcharge" 
         value=<?php echo $row['buy_bcharge'];  ?>></td>
