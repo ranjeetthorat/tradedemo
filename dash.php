@@ -10,21 +10,14 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
  integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
  crossorigin="anonymous"></script> -->
- <link rel="stylesheet" href="asset/bootstrap.min.css">
-<script src="asset/jquery.js"></script>
-<script src="asset/bootstrap.bundle.min.js"></script>
- 
+ <link rel="stylesheet" href="asset/bootstrap.min.css?1">
+<script src="asset/jquery.js?2"></script>
+<script src="asset/bootstrap.bundle.min.js?3"></script>
 <!DOCTYPE html>
 <html>
 <head>
-  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" 
-  integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" 
-  crossorigin="anonymous"
-   referrerpolicy="no-referrer" /> -->
- 
- </head>
-    <body style="background-color: #3d0e39 ;">  
-    </body>
+
+ </head> 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 body 
@@ -116,10 +109,7 @@ a{
   display: block;
 }
 </style>
-
-</style>
-</head>
-<body>
+<body  style="background-color: #3d0e39 ;">
   <div class="mq-container">
     <div class="mq-bread-crumbs">
       <ul><br>
@@ -145,12 +135,12 @@ a{
         </div>
       <div class="zoom"><a href="trading.php">First-Trading</a></div>
       <div class="zoom"><a href="tradingtable.php">Second-Trading</a></div><br>
-       <div class="zoom"><a href="infotable.php">
-         pending-Trade</a></div>
-      <div class="zoom"><a href="reports.php">Reports</a></div>
-      <div class="zoom"><a href=""></a>e</div>
-      <div class="zoom"><a href=""></a>f</div> 
-       </div>      
+       <div class="zoom"><a href="infotable.php">Complete Trading</a></div>
+      <div class="zoom"><a href="reports.php">Pending Trade</a></div><br>
+      <!-- <div class="zoom"><a href=""></a>e</div>
+      <div class="zoom"><a href=""></a>f</div> -->
+       </div>   
+  </div>    
 </body>
 </html> 
 

@@ -19,7 +19,7 @@
            <div class="container">
             <div class="p-4 m-4">
                 <div class="col-lg-5 mx-auto border rounded pt-4"> 
-                    <h3 class="alert alert-light border rounded">Trading</h3>
+                    <h3 class="alert alert-light border rounded" style="text-align: center;">Trading</h3>
         
                     <form action="inserttrading.php" method="POST">
                     <!-- <div class="form-group">

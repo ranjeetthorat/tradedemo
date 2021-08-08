@@ -91,22 +91,18 @@
                    <input type="date" required id="fromdate"  name="fromdate"  class="form-control form-control-sm col-md-3"> &nbsp;
                     <button type="submit" name="btn" class="btn btn-md btn-outline-secondary">submit</button>&nbsp;
                     <button  onclick="window.print()" class="btn btn-md btn-outline-secondary ">print</button></h3> 
+                 <br><br><br><br>
 
-  
-                 <br><br>
       <?php  if(isset($_GET['cid'])) {
          $todate=$_GET['todate'] ; 
-         $fromdate=$_GET['fromdate'];
-
-        
-      
+         $fromdate=$_GET['fromdate'];  
       ?>
 
   <table class="table table-borderd table-sm">
-  <h4>Name:    <?php if(isset($_GET['cname'])) echo $_GET['cname'];?> </h4>
-             
-  
+  <h4>Name:<?php if(isset($_GET['cname'])) echo $_GET['cname'];?> </h4>
+ 
     <thead>
+   
       <tr>   
         <th style="visibility:hidden">tid</th>
       
