@@ -149,7 +149,6 @@
       
           </td>  
           </form>   
-      </tr>             
     </tr>  
     <?php } ?>
      </tbody>

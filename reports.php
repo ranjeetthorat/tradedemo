@@ -122,28 +122,29 @@
       $sr=1;
     while($row=mysqli_fetch_assoc($result)){
         ?>  
-        <form action="updatetrade.php" method="post">
+        <form action="pendinupdate.php" method="post">
     <tr>
       
       
         <td >
-          <input class="tid" hidden name="tid" type="text" readonly value="<?php echo $row['tid'];  ?>">
+          <input class="tid" hidden class="design" name="tid" type="text" readonly value="<?php echo $row['tid'];  ?>">
         <?php echo $sr++; ?></td>     
-        <td><?php echo $row['sname'];  ?></td>
-        <td>  <?php if(isSell($row['sell_date']))  echo $row['buyqty']; else echo $row['sell_qty'];    ?> </td>
-        <td><?php if(isSell($row['sell_date']))  echo $row['buyprice']; else echo $row['sell_price'];    ?></td>
-        <td><?php if(isSell($row['sell_date']))  echo $row['buy_total']; else echo $row['sell_total'];  ?></td>
-        <td><?php if(isSell($row['sell_date']))  echo "buy"; else echo "sell";  ?></td>
-        <td><?php if(isSell($row['sell_date']))   echo date('Y-m-d',$row['buy_date']); else echo date('Y-m-d',$row['sell_date']);  ?></td>
-        <td><input type="text"></td>
+        <td> <input type="text" class="design" name="sname" id="sname" value="<?php echo $row['sname'];?>" > </td>
+        <td>  <input type="text" class="design" name="qty" id="qty" value="<?php if(isSell($row['sell_date']))  echo $row['buyqty']; else echo $row['sell_qty'];    ?>" > </td>
+        <td> <input type="text" class="design" name="price" id="price" value="<?php if(isSell($row['sell_date']))  echo $row['buyprice']; else echo $row['sell_price'];    ?>" > </td>
+        <td> <input type="text" class="design" name="total" id="total" value="<?php if(isSell($row['sell_date']))  echo $row['buy_total']; else echo $row['sell_total'];  ?>" > </td>
+        <td> <input type="text" class="design" name="status" id="status" value="<?php if(isSell($row['sell_date']))  echo 'buy'; else echo 'sell';  ?>" > </td>
+        <td> <input type="text" class="design" name="date" id="date" value="<?php if(isSell($row['sell_date']))   echo date('Y-m-d',$row['buy_date']); else echo date('Y-m-d',$row['sell_date']);  ?>" > </td>
+        <td><input type="text" required name="current"></td>
         
        
-       <td> <button type="submit" class="btn btn-md btn-outline-secondary" name="edit"> Save</button>
+       <td> <button type="submit" class="btn btn-md btn-outline-secondary"  name="edit"> Save</button>
 
       
           </td>  
          
       </tr>  
+      <input type="text" hidden name="bcharge" value = "<?php if(isSell($row['sell_date'])) echo $row['buy_bcharge']; else echo $row['sell_bcharge']; ?>" >
     </form>           
      
     <?php } ?>
