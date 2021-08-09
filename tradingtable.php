@@ -92,18 +92,17 @@
       <tr>   
         <th style="visibility:hidden">tid</th>
       
-        <th>sname</th>
-        <th>buy_bcharge</th>
-        <th>buyqty</th>
-        <th>Buy_price</th>
-        <th>Buy_total</th>
-        <th>Buy_date</th>         
-        <th>sell_bcharge</th>
-        <th>sell_qty</th>
-        <th>sell_price</th>
-        <th>sell_total</th>
-        <th>sell_date</th>  
-        
+        <th>ShareName</th>
+        <th>Brokerage</th>
+        <th>Buy Qty</th>
+        <th>Buy Price</th>
+        <th>Buy Total</th>
+        <th>Buy Date</th>         
+        <th>Brokerage</th>
+        <th>Sell Qty</th>
+        <th>Sell Price</th>
+        <th>Sell Total</th>
+        <th>Sell Date</th>  
       </tr>
       <tbody >
       <?php 

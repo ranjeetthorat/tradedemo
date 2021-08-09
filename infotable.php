@@ -100,31 +100,29 @@
 
   <table class="table table-borderd table-sm">
   <h4>Name:<?php if(isset($_GET['cname'])) echo $_GET['cname'];?> </h4>
- 
     <thead>
-   
       <tr>   
         <th style="visibility:hidden">tid</th>
       
-        <th>sname</th>
-        <th>buy_bcharge</th>
-        <th>buyqty</th>
-        <th>Buy_price</th>
-        <th>Buy_total</th>
-        <th>Buy_date</th>         
-        <th>sell_bcharge</th>
-        <th>sell_qty</th>
-        <th>sell_price</th>
-        <th>sell_total</th>
-        <th>final_total</th>
-        <th>sell_date</th>  
-        
+        <th>Share Name</th>
+        <th>Brokerage</th>
+        <th>Buy Qty</th>
+        <th>Buy Price</th>
+        <th>Buy Total</th>
+        <th>Buy Date</th>         
+        <th>Brokerage</th>
+        <th>Sell Qty</th>
+        <th>Sell Price</th>
+        <th>Sell Total</th>
+        <th>Total</th>
+        <th>Sell Date</th> 
       </tr>
+      
       <tbody >
       <?php 
   $cid=$_GET['cid'];
 
-  $sql="select * from trading where cid='$cid' and status='active'   and (buy_date != 0 and sell_date != 0)";
+  $sql="select * from trading where cid='$cid' and status='active' ";
 
   $result=mysqli_query($connection,$sql) ;  
   ?>
@@ -134,7 +132,7 @@
     <tr>
           <td ><input class="tid" hidden name="tid" type="text" readonly value="<?php echo $row['tid'];  ?>"></td>
       
-        <td><?php echo $row['sname'];  ?></td>
+        <td class="design"><?php echo $row['sname'];  ?></td>
         <td><?php echo $row['buy_bcharge'];  ?></td>
         <td><?php echo $row['buyqty'];  ?></td>
         <td><?php echo $row['buyprice'];  ?></td>
@@ -147,18 +145,21 @@
         <td><?php echo $row['final_total'];  ?></td>   
         <td><?php  if($row['sell_date']==0) echo "0"; else echo date('Y-m-d',$row['sell_date']); ?></td>    
         <td>
-      
-          </td>  
+
+        </td>  
+         
           </form>   
       </tr>             
     </tr>  
+
     <?php } ?>
+
      </tbody>
 
      </table>
 <?php } ?>
 
-<script>
+      <script>
        function getTable(event)
        {
         

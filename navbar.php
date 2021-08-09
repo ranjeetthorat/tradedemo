@@ -28,6 +28,9 @@
     <li class="nav-item ml-2">
         <a class="nav-link" href="reports.php">Pending trade</a>
     </li>
+    <li class="nav-item ml-2">
+        <a class="nav-link" href="sharereport.php">Share Report</a>
+    </li>
 </div>
 </nav>
 
