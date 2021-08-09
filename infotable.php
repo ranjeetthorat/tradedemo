@@ -50,6 +50,9 @@
     input,label{
       vertical-align:middle;
     }
+    .boldrow{
+      font-weight:800;
+    }
  
  
     
@@ -122,14 +125,15 @@
       <?php 
   $cid=$_GET['cid'];
 
-  $sql="select * from trading where cid='$cid' and status='active' ";
+  $sql="select * from trading where cid='$cid' and status='active' order by complete DESC ";
 
   $result=mysqli_query($connection,$sql) ;  
   ?>
       <?php
+      $finaltot = 0;
     while($row=mysqli_fetch_assoc($result)){
         ?>  
-    <tr>
+    <tr <?php if($row['buy_bcharge'] == 0)echo "class='boldrow'" ?> >
           <td ><input class="tid" hidden name="tid" type="text" readonly value="<?php echo $row['tid'];  ?>"></td>
       
         <td class="design"><?php echo $row['sname'];  ?></td>
@@ -148,11 +152,27 @@
 
         </td>  
          
-          </form>   
+          </form>  
+           
       </tr>             
-    </tr>  
+    <?php $finaltot = $finaltot +$row['final_total']; ?>
 
     <?php } ?>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>Total</td>
+      <td><?php echo $finaltot; ?></td>
+      <td></td>
+    </tr>
 
      </tbody>
 

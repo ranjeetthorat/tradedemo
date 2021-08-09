@@ -19,14 +19,14 @@
    
   <style>
     input{
-      width: 100px;
+      width: 80px;
       padding: 0px;
       font-size: 15px;
     
       
     }
     input:read-only{
-      width: 100px;
+      width: 80px;
       padding: 0px;
       border: none;
       font-size: 15px;
@@ -84,6 +84,7 @@
         ?>   
       <?php  if(isset($_GET['cid'])) { 
       ?>
+      <div class="container-fluid">
 
   <table class="table table-borderd table-sm">
   <h4> Name:   <?php if(isset($_GET['cname'])) echo $_GET['cname'];?> </h4>
@@ -153,6 +154,7 @@
      </tbody>
 
      </table>
+    </div>
 <?php } ?>
 
 <script>

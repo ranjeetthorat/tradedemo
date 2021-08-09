@@ -111,6 +111,7 @@
       
         
       </tr>
+      </thead>
       <tbody >
       <?php 
   $cid=$_GET['cid'];

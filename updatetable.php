@@ -18,16 +18,17 @@ $a=$today;
 $buytotal=($buyprice*$buyqty)+$buycharge;
  $finaltotal=$buytotal-$selltotal;
  $update='';
+ $txn = 1;
  if($buydate=='0')
  {
     $update="UPDATE trading SET buy_bcharge='$buycharge',buyqty='$buyqty',buyprice='$buyprice',
     buy_total='$buytotal',sell_bcharge='$sellcharge',sell_qty='$sellqty',sell_price='$sellprice'
-    ,final_total='$finaltotal',buy_date='$today' WHERE tid='$tid'";
+    ,final_total='$finaltotal',buy_date='$today',complete='$txn' WHERE tid='$tid'";
  }
  else{
     $update="UPDATE trading SET buy_bcharge='$buycharge',buyqty='$buyqty',buyprice='$buyprice',
    sell_bcharge='$sellcharge',sell_qty='$sellqty',sell_price='$sellprice'
-    ,sell_total='$selltotal',final_total='$finaltotal',sell_date='$today' WHERE tid='$tid'";
+    ,sell_total='$selltotal',final_total='$finaltotal',sell_date='$today',complete='$txn' WHERE tid='$tid'";
  }
     $result=mysqli_query($connection,$update)  or die( mysqli_error($connection));
     echo "$result";
