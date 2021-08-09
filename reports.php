@@ -98,10 +98,11 @@
                 
     <thead>
       <tr>   
-        <th>tid</th>
+        <th>Id</th>
         <th>Share Name</th>
         <th>QTY</th>
         <th>Price</th>
+        <th>Brokrage</th>
         <th>Total</th>
         <th>status</th>
         <th>date</th>         
@@ -132,6 +133,7 @@
         <td> <input type="text" class="design" name="sname" id="sname" value="<?php echo $row['sname'];?>" > </td>
         <td>  <input type="text" class="design" name="qty" id="qty" value="<?php if(isSell($row['sell_date']))  echo $row['buyqty']; else echo $row['sell_qty'];    ?>" > </td>
         <td> <input type="text" class="design" name="price" id="price" value="<?php if(isSell($row['sell_date']))  echo $row['buyprice']; else echo $row['sell_price'];    ?>" > </td>
+        <td><input type="text" class="design" name="bcharges" value = "<?php if(isSell($row['sell_date'])) echo $row['buy_bcharge']; else echo $row['sell_bcharge']; ?>" ></td>
         <td> <input type="text" class="design" name="total" id="total" value="<?php if(isSell($row['sell_date']))  echo $row['buy_total']; else echo $row['sell_total'];  ?>" > </td>
         <td> <input type="text" class="design" name="status" id="status" value="<?php if(isSell($row['sell_date']))  echo 'buy'; else echo 'sell';  ?>" > </td>
         <td> <input type="text" class="design" name="date" id="date" value="<?php if(isSell($row['sell_date']))   echo date('Y-m-d',$row['buy_date']); else echo date('Y-m-d',$row['sell_date']);  ?>" > </td>
