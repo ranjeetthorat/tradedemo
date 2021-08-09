@@ -61,7 +61,7 @@
    <?php include('db.php') ?>
    <?php include("navbar.php") ?>
    <body>
-   <h2 style="text-align: center;"><strong> Trading report</strong></h2>  <br>
+   <h2 style="text-align: center;"><strong> Trading Report</strong></h2>  <br>
    
    <form action="infotable.php" name="report" method="get">
   
