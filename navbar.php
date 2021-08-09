@@ -17,19 +17,23 @@
             <a class="nav-link" href="sharetable.php">Share</a>
         </li>
         <li class="nav-item ml-2">
-          <a class="nav-link" href="trading.php">first-Trading</a>
+          <a class="nav-link" href="trading.php">First Trade</a>
       </li>
       <li class="nav-item ml-2">
-        <a class="nav-link" href="tradingtable.php">Second-Trading</a>
+        <a class="nav-link" href="tradingtable.php">Second Trade</a>
+    </li>
+   
+    <li class="nav-item ml-2">
+        <a class="nav-link" href="reports.php">Pending Trade</a>
     </li>
     <li class="nav-item ml-2">
-        <a class="nav-link" href="infotable.php">Complete Trading</a>
-    </li>
-    <li class="nav-item ml-2">
-        <a class="nav-link" href="reports.php">Pending trade</a>
+        <a class="nav-link" href="infotable.php">Complete Trade Report</a>
     </li>
     <li class="nav-item ml-2">
         <a class="nav-link" href="sharereport.php">Share Report</a>
+    </li>
+    <li class="nav-item ml-2">
+        <a class="nav-link" href="finalreport.php">Total Report</a>
     </li>
 </div>
 </nav>

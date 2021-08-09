@@ -17,6 +17,7 @@
 </head>
 <body>
 <?php include("db.php");
+ include("navbar.php") ;
 function isSell($value){
     if($value == '0' || $value == 0 )
     return true;

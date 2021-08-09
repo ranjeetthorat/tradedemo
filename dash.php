@@ -133,12 +133,12 @@ a{
             <a href="sharetable.php">2.Details</a>
           </div>
         </div>
-      <div class="zoom"><a href="trading.php">First-Trading</a></div>
-      <div class="zoom"><a href="tradingtable.php">Second-Trading</a></div><br>
-       <div class="zoom"><a href="infotable.php">Complete Trading</a></div>
+      <div class="zoom"><a href="trading.php">First Trade</a></div>
+      <div class="zoom"><a href="tradingtable.php">Second Trade</a></div><br>
       <div class="zoom"><a href="reports.php">Pending Trade</a></div>
-     <div class="zoom"><a href="sharereport.php">Share Report</a></div>
-      <div class="zoom"><a href=""></a>f</div> 
+       <div class="zoom"><a href="infotable.php">Complete Trade Report</a></div>
+          <div class="zoom"><a href="sharereport.php">Share Report</a></div>
+      <div class="zoom"><a href="finalreport.php">Total Report</a></div> 
        </div>   
   </div>    
 </body>
