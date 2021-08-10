@@ -33,7 +33,10 @@
         <a class="nav-link" href="sharereport.php">Share Report</a>
     </li>
     <li class="nav-item ml-2">
-        <a class="nav-link" href="finalreport.php">Total Report</a>
+        <a class="nav-link" href="finalreport.php">Total pending Report</a>
+    </li>
+    <li class="nav-item ml-2">
+        <a class="nav-link" href="customreport.php">Total  Report</a>
     </li>
 </div>
 </nav>

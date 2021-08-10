@@ -30,10 +30,10 @@
       outline: none;  
     }
 
-    td,th{
+    /* td,th{
       width: 20px;
       padding: 0px;
-    }
+    } */
     table{
       width: 600px;
     }
@@ -53,6 +53,7 @@
     .boldrow{
       font-weight:800;
     }
+
  
  
     
@@ -61,7 +62,7 @@
    <?php include('db.php') ?>
    <?php include("navbar.php") ?>
    <body>
-   <h2 style="text-align: center;"><strong> Trading Report</strong></h2>  <br>
+   <h2 style="text-align: center;"><strong>Trading Report</strong></h2>  <br>
    
    <form action="infotable.php" name="report" method="get">
   
@@ -86,19 +87,21 @@
     
                    
                   <input type="text" hidden  name="cname" id="cname" >           
-                 <label>Select To date:</label>&nbsp;
-                <input  type="date" required  id="todate"  name="todate"  class="form-control form-control-sm col-md-2 ">
-   
-                   
-                 <label>Select from date:&nbsp;</label>
-                   <input type="date" required id="fromdate"  name="fromdate"  class="form-control form-control-sm col-md-3"> &nbsp;
+                  <label>Select from date:&nbsp;</label>
+                  <input type="date"  id="fromdate"  name="fromdate"  class="form-control form-control-sm col-md-2"> &nbsp;
+                  
+                  
+                  <label>Select To date:</label>&nbsp;
+                  <input  type="date"   id="todate"  name="todate"  class="form-control form-control-sm col-md-2 ">
                     <button type="submit" name="btn" class="btn btn-md btn-outline-secondary">submit</button>&nbsp;
-                    <button  onclick="window.print()" class="btn btn-md btn-outline-secondary ">print</button></h3> 
+                    <button  onclick="window.print()" class="btn btn-md btn-outline-secondary ">print</button>
+                    </form>
+                    </h3> 
                  <br><br><br><br>
 
       <?php  if(isset($_GET['cid'])) {
-         $todate=$_GET['todate'] ; 
-         $fromdate=$_GET['fromdate'];  
+         $todate=strtotime($_GET['todate']) ; 
+         $fromdate=strtotime($_GET['fromdate']);  
       ?>
 
   <table class="table table-borderd table-sm">
@@ -107,54 +110,70 @@
       <tr>   
         <th style="visibility:hidden">tid</th>
       
-        <th>Share Name</th>
-        <th>Brokerage</th>
+        <th>Buy Date</th>         
+        <th>Script Name</th>
+        <th class="bcharge" >Brokerage</th>
         <th>Buy Qty</th>
         <th>Buy Price</th>
-        <th>Buy Total</th>
-        <th>Buy Date</th>         
+        <!-- <th>Buy Total</th> -->
+         <th>Dealer Buy price</th> 
         <th>Brokerage</th>
         <th>Sell Qty</th>
         <th>Sell Price</th>
-        <th>Sell Total</th>
+        <th>dealer sell price</th>
+        <!-- <th>Sell Total</th> -->
         <th>Total</th>
-        <th>Sell Date</th> 
+        <th>Action</th> 
+        <th>Delete</th> 
       </tr>
       
       <tbody >
       <?php 
   $cid=$_GET['cid'];
 
-  $sql="select * from trading where cid='$cid' and status='active' order by complete DESC ";
+  
+$todate = $todate + 24*60*60;
+  $sql="select * from trading where cid='$cid' and status='active' and
+   ( (buy_date >= '$fromdate' and buy_date <= '$todate') or (sell_date >= '$fromdate' and sell_date <= '$todate') )   order by complete DESC ";
 
+   //echo $sql;
   $result=mysqli_query($connection,$sql) ;  
   ?>
       <?php
       $finaltot = 0;
     while($row=mysqli_fetch_assoc($result)){
         ?>  
-    <tr <?php if($row['buy_bcharge'] == 0)echo "class='boldrow'" ?> >
-          <td ><input class="tid" hidden name="tid" type="text" readonly value="<?php echo $row['tid'];  ?>"></td>
+         <form action="dealers.php" method="post">
+           <tr <?php if($row['buy_bcharge'] == 0 || $row['sell_bcharge']==0)echo "class='boldrow'" ?> >
+            <td ><input class="tid" hidden name="tid" type="text" readonly value="<?php echo $row['tid'];  ?>"></td>
+            <td><?php if($row['buy_date']==0) echo "0"; else echo date('Y-m-d',$row['buy_date']); ?></td>
       
         <td class="design"><?php echo $row['sname'];  ?></td>
-        <td><?php echo $row['buy_bcharge'];  ?></td>
+        <td class="bcharge"><?php echo $row['buy_bcharge'];  ?></td>
         <td><?php echo $row['buyqty'];  ?></td>
         <td><?php echo $row['buyprice'];  ?></td>
-        <td><?php echo $row['buy_total'];  ?></td>   
-       <td><?php if($row['buy_date']==0) echo "0"; else echo date('Y-m-d',$row['buy_date']); ?></td>
+        <!-- <td><?php echo $row['buy_total'];  ?></td>    -->
+        <td><input type="text" required value = "<?php echo $row['dealerbuy']; ?>" name="dealerbuy"></td>
         <td><?php echo $row['sell_bcharge'];  ?></td>
         <td><?php echo $row['sell_qty'];  ?></td>
         <td><?php echo $row['sell_price'];  ?></td>
-        <td><?php echo $row['sell_total'];  ?></td>   
+        <td><input type="text" required value = "<?php echo $row['dealersell']; ?>" name="dealersell"></td>
+        <!-- <td><?php echo $row['sell_total'];  ?></td>    -->
         <td><?php echo $row['final_total'];  ?></td>   
-        <td><?php  if($row['sell_date']==0) echo "0"; else echo date('Y-m-d',$row['sell_date']); ?></td>    
+        <!-- <td><?php  if($row['sell_date']==0) echo "0"; else echo date('Y-m-d',$row['sell_date']); ?></td>     -->
         <td>
-
+          <button type="submit" class="btn btn-sm btn-outline-info">update</button>
         </td>  
          
-          </form>  
+        <td>
+          <button type="submit" form='deletetid' class="btn btn-sm btn-outline-danger">delete</button>
+        </td>
            
-      </tr>             
+      </tr>   
+      </form>  
+       <form action="deletetrade.php" id="deletetid" method="post">
+       <input class="tid" hidden name="tid" type="text" readonly value="<?php echo $row['tid'];  ?>">
+       </form>        
     <?php $finaltot = $finaltot +$row['final_total']; ?>
 
     <?php } ?>
@@ -171,7 +190,8 @@
       <td></td>
       <td>Total</td>
       <td><?php echo $finaltot; ?></td>
-      <td></td>
+
+      
     </tr>
 
      </tbody>

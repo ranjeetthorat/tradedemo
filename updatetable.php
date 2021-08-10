@@ -16,7 +16,8 @@ $today=time();
 $a=$today;
  $selltotal=($sellprice*$sellqty)+$sellcharge;
 $buytotal=($buyprice*$buyqty)+$buycharge;
- $finaltotal=$buytotal-$selltotal;
+$cha = $sellcharge + $buycharge; 
+ $finaltotal=($selltotal-$buytotal) - $cha;
  $update='';
  $txn = 1;
  if($buydate=='0')

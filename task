@@ -1,2 +1,5 @@
-o1) add class to date and sell column
-2) name hie 
+add two columns
+dealerbuy
+dealersell
+
+both varchar defualt 0

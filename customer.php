@@ -32,10 +32,10 @@
                           </div>    
                           <div class="form-group">
                             <label>status status:</label>
-                       <select required  id="status"  name="status"  class="form-control form-control-sm col-md-6">
-                    <option value="">Select </option>
-                    <option value="">active</option>
-                    <option value="">inactive</option>
+                       <select required   id="status"  name="status"  class="form-control form-control-sm col-md-6">
+
+                    <option selected value="active">active</option>
+                    <option value="inactive">inactive</option>
                        </select>
                        </div>    
                         <div class="form-group">

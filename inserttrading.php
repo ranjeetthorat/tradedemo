@@ -50,5 +50,5 @@
         ?>     
           <script>
          alert(" trading Added Successfully")
-         window.location="tradingtable.php";
+         window.location="trading.php";
         </script>   

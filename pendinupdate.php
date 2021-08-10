@@ -23,7 +23,7 @@ if($_POST['status'] == 'sell'){
 
 } else {
     $current = trim($_POST['current']);
-    $diff = $_POST['price'] - $current;
+    $diff =  $current - $_POST['price'] ;
     $finaltotal = $diff * $_POST['qty'];
     $newprice = $current * $_POST['qty'];
     $buy_total =$newprice + $_POST['bcharge'];
