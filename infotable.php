@@ -166,12 +166,12 @@ $todate = $todate + 24*60*60;
         </td>  
          
         <td>
-          <button type="submit" form='deletetid' class="btn btn-sm btn-outline-danger">delete</button>
+          <button type="submit" form="<?php echo $row['tid']; ?>" class="btn btn-sm btn-outline-danger">delete</button>
         </td>
            
       </tr>   
       </form>  
-       <form action="deletetrade.php" id="deletetid" method="post">
+       <form action="deletetrade.php" id="<?php echo $row['tid']; ?>" method="post">
        <input class="tid" hidden name="tid" type="text" readonly value="<?php echo $row['tid'];  ?>">
        </form>        
     <?php $finaltot = $finaltot +$row['final_total']; ?>
