@@ -114,7 +114,7 @@
         <td> <?php echo $row['final_total']; ?> </td>
         <td><?php echo $row['dealerbuy'];?></td>
         <td> <?php echo $row['dealersell'];?> </td>
-        <td> <?php $dbt =$row['dealerbuy'] * $QTY; $dst=$row['dealersell'] * $QTY; $fin = $dbt-$dst + $bchar; echo $fin;  ?>  </td>
+        <td> <?php $dbt =$row['dealerbuy'] * $QTY; $dst=$row['dealersell'] * $QTY; $fin = $dst-$dbt + 0; echo $fin;  ?>  </td>
         <?php $pdate=0;
                  if($row['complete'] == '1')
                   {

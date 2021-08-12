@@ -38,7 +38,7 @@
       width: 600px;
     }
     @media print{
-      .form-control,button,label{
+      .form-control,button,label,.printhide{
            display: none;
       }
     }
@@ -93,8 +93,8 @@
                   
                   <label>Select To date:</label>&nbsp;
                   <input  type="date"   id="todate"  name="todate"  class="form-control form-control-sm col-md-2 ">
-                    <button type="submit" name="btn" class="btn btn-md btn-outline-secondary">submit</button>&nbsp;
-                    <button  onclick="window.print()" class="btn btn-md btn-outline-secondary ">print</button>
+                    <button type="submit" name="btn" class="btn btn-md btn-outline-secondary printhide">submit</button>&nbsp;
+                    <button  onclick="window.print()" class="btn btn-md btn-outline-secondary printhide">print</button>
                     </form>
                     </h3> 
                  <br><br><br><br>
@@ -116,15 +116,15 @@
         <th>Buy Qty</th>
         <th>Buy Price</th>
         <!-- <th>Buy Total</th> -->
-         <th>Dealer Buy price</th> 
+         <th class="printhide">Dealer Buy price</th> 
         <th>Brokerage</th>
         <th>Sell Qty</th>
         <th>Sell Price</th>
-        <th>dealer sell price</th>
+        <th class="printhide" >dealer sell price</th>
         <!-- <th>Sell Total</th> -->
-        <th>Total</th>
-        <th>Action</th> 
-        <th>Delete</th> 
+        <th >Total</th>
+        <th class="printhide">Action</th> 
+        <th class="printhide">Delete</th> 
       </tr>
       
       <tbody >
@@ -153,19 +153,19 @@ $todate = $todate + 24*60*60;
         <td><?php echo $row['buyqty'];  ?></td>
         <td><?php echo $row['buyprice'];  ?></td>
         <!-- <td><?php echo $row['buy_total'];  ?></td>    -->
-        <td><input type="text" required value = "<?php echo $row['dealerbuy']; ?>" name="dealerbuy"></td>
+        <td class="printhide"><input type="text" required value = "<?php echo $row['dealerbuy']; ?>" name="dealerbuy"></td>
         <td><?php echo $row['sell_bcharge'];  ?></td>
         <td><?php echo $row['sell_qty'];  ?></td>
         <td><?php echo $row['sell_price'];  ?></td>
-        <td><input type="text" required value = "<?php echo $row['dealersell']; ?>" name="dealersell"></td>
+        <td class="printhide"><input type="text" required value = "<?php echo $row['dealersell']; ?>" name="dealersell"></td>
         <!-- <td><?php echo $row['sell_total'];  ?></td>    -->
         <td><?php echo $row['final_total'];  ?></td>   
         <!-- <td><?php  if($row['sell_date']==0) echo "0"; else echo date('Y-m-d',$row['sell_date']); ?></td>     -->
-        <td>
+        <td class="printhide">
           <button type="submit" class="btn btn-sm btn-outline-info">update</button>
         </td>  
          
-        <td>
+        <td class="printhide">
           <button type="submit" form="<?php echo $row['tid']; ?>" class="btn btn-sm btn-outline-danger">delete</button>
         </td>
            
@@ -184,11 +184,11 @@ $todate = $todate + 24*60*60;
       <td></td>
       <td></td>
       <td></td>
+      <td class="printhide"></td>
       <td></td>
       <td></td>
       <td></td>
-      <td></td>
-      <td>Total</td>
+      <td class="printhide">Total</td>
       <td><?php echo $finaltot; ?></td>
 
       

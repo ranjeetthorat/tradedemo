@@ -116,8 +116,15 @@
       <?php
     while($row=mysqli_fetch_assoc($result)){
         ?>  
+        
     <tr>
       <form action="updatetable.php" method="Post">
+      <input type="text" hidden name="shareid" id="sharid" value="<?php echo $row['sid']; ?>">
+        <input type="text" hidden name="sharename" id="sharname" value="<?php echo $row['sname']; ?>">
+        <input type="text" hidden name="customername" id="customername" value="<?php echo $row['cname']; ?>">
+        <input type="text" hidden name="customerid" id="customerid" value="<?php echo$row['cid'];?>">
+        <input type="text" hidden name="bdate" id="bdate" value="<?php echo$row['buy_date'];?>">
+        <input type="text" hidden name="sdate" id="sdate" value="<?php echo$row['sell_date'];?>">
         <td ><input class="tid" hidden name="tid" type="text" readonly value="<?php echo $row['tid'];  ?>"></td>
       
         <td><?php echo $row['sname'];  ?></td>
