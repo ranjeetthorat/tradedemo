@@ -1,0 +1,16 @@
+IMPORTANT  add you r ausername and password for Database
+create new file 'db.php' in root folder
+add below code in that php file
+
+replace 
+/**
+$connection = mysqli_connect('localhost', 'YOURUSERNAMEHERE', 'PASSWORD');
+
+if (!$connection){
+    die("Database Connection Failed" . mysqli_error($connection));
+}
+$select_db = mysqli_select_db($connection, 'market');
+if (!$select_db){
+    die("Database Selection Failed" . mysqli_error($connection));
+
+    **/
