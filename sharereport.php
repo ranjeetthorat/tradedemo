@@ -94,7 +94,29 @@
       ?>
 
   <table class="table table-borderd table-sm">
-  <h4> Name:   <?php if(isset($_GET['sname'])) echo $_GET['sname'];?> </h4>
+<?php
+$sid=$_GET['sid'];
+$totbuy = "select SUM(buyqty) as buy from trading where sid='$sid' and status='active' and  sell_date = 0";
+$totsell = "select SUM(sell_qty) as sell from trading where sid='$sid' and status='active' and buy_date = 0";
+
+$resultbuy = mysqli_query($connection,$totbuy);
+$resultsell = mysqli_query($connection,$totsell);
+$buyq='';
+while($row = mysqli_fetch_assoc($resultbuy)){
+  $buyq = $row['buy'];
+}
+
+while($row = mysqli_fetch_assoc($resultsell)){
+
+$sellq=$row['sell'];
+}
+
+?>
+
+  <h4> Name:   <?php if(isset($_GET['sname'])) echo $_GET['sname'];?> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    Total Qty :    <?php echo $buyq -$sellq;  ?>
+
+</h4>
                 
     <thead>
       <tr>   

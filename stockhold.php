@@ -30,22 +30,21 @@ function isSell($value){
 
 ?>
     <div class="container-fluid text-center">
-        <h3>Reports</h3>
+        <h3>Holding share  of dealer</h3>
         <br> <br>
         <?php   
-        $select = "SELECT distinct(cid),cname from trading where complete=0";
-      
+        $select = "SELECT * from trading where  status = 'active' and complete=0 and (dealersell != '0' or dealerbuy !='0') order by sname";
+    
       
         $result1 = mysqli_query($connection,$select);
-       $value =  mysqli_fetch_all($result1);
+      
      
 
-       for($i=0;$i<count($value);$i++){
+      
 
 
      ?>
         <div class="nameblock container">
-            <h5 class="bg-secondary"> <?php echo $value[$i][1] ?> </h1>
         <table class="table table-borderd table-striped table-sm">
         <thead>
       <tr>  
@@ -61,11 +60,8 @@ function isSell($value){
         
       </tr>
         <?php 
-        $cid = $value[$i][0];
-        $sql="select * from trading where cid='$cid' and status='active' and (buy_date = 0 or sell_date = 0)";
-        $result=mysqli_query($connection,$sql) ;  
         $sr=1;
-      while($row=mysqli_fetch_assoc($result)){
+      while($row=mysqli_fetch_assoc($result1)){
         
         ?>
         <tbody>
@@ -73,9 +69,9 @@ function isSell($value){
                 <td><?php echo $sr++; ?></td>
         <td> <?php echo $row['sname'] ?> </td>
         <td> <?php if(isSell($row['sell_date']))  echo $row['buyqty']; else echo $row['sell_qty']; ?> </td>
-        <td> <?php if(isSell($row['sell_date']))  echo $row['buyprice']; else echo $row['sell_price']; ?> </td>
+        <td> <?php if(isSell($row['sell_date']))  echo $row['dealerbuy']; else echo $row['dealersell']; ?> </td>
         <td class="hidecol"> <?php if(isSell($row['sell_date']))  echo $row['buy_bcharge']; else echo $row['sell_bcharge']; ?> </td>
-        <td> <?php if(isSell($row['sell_date']))  echo $row['buy_total']; else echo $row['sell_total']; ?> </td>
+        <td> <?php if(isSell($row['sell_date']))  echo $row['dealerbuy']*$row['buyqty']; else echo $row['sell_qty']*$row['dealersell']; ?> </td>
         <td> <?php if(isSell($row['sell_date']))  echo 'buy'; else echo 'sell'; ?> </td>
         <td> <?php if(isSell($row['sell_date']))  echo date('Y-m-d',$row['buy_date']); else echo date('Y-m-d',$row['sell_date']); ?> </td>
         </tr>
@@ -88,7 +84,7 @@ function isSell($value){
         <hr class="bg-dark">
         <br>
 
-        <?php } ?>
+    
     </div>
 </body>
 </html>

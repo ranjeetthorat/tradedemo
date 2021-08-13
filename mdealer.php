@@ -12,5 +12,5 @@ $result = mysqli_query($connection,$update);
 
 <script>
     alert("succesful updated");
-    window.location.href = 'infotable.php';
+    window.location.href = 'missingdealer.php';
 </script>
