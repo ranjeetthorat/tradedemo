@@ -40,9 +40,9 @@
     input,label{
       vertical-align:middle;
     }
-    .boldrow{
-      /* font-weight:800; */
-    }
+    /* .boldrow{
+      /* font-weight:800; 
+    } */
 h2{
     text-align:center
 }
