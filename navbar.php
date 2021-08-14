@@ -7,7 +7,7 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
-          <li class="nav-item active ml-5">
+          <li class="nav-item active ml-2">
               <a class="nav-link" href="dash.php">Dashboard</a>
           </li>
           <li class="nav-item ml-2">
@@ -37,6 +37,12 @@
     </li>
     <li class="nav-item ml-2">
         <a class="nav-link" href="customreport.php">Total  Report</a>
+    </li>
+    <li class="nav-item ml-2">
+        <a class="nav-link" href="missingdealer.php">Missing Trade of Dealer</a>
+    </li>
+    <li class="nav-item ml-2">
+        <a class="nav-link" href="stockhold.php">Stock Hold of Dealer</a>
     </li>
 </div>
 </nav>

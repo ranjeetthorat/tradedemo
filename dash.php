@@ -45,7 +45,7 @@ body
   justify-content: right;
   border:1px solid;
   grid-template-columns: repeat(auto-fill, 220px);
-  grid-template-rows: repeat(auto-fill, 220px) ;
+  grid-template-rows: repeat(auto-fill, 150px) ;
 }
 .grid-container > div {
   background-color:  rgb(224, 221, 221);
@@ -138,7 +138,10 @@ a{
       <div class="zoom"><a href="reports.php">Pending Trade</a></div>
        <div class="zoom"><a href="infotable.php">Complete Trade Report</a></div>
           <div class="zoom"><a href="sharereport.php">Share Report</a></div>
-      <div class="zoom"><a href="finalreport.php">Total Report</a></div> 
+      <div class="zoom"><a href="finalreport.php">Total Panding Report</a></div><br> 
+      <div class="zoom"><a href="customreport.php">Total Reports</a></div>
+      <div class="zoom"><a href="missingdealer.php">Missing Trade of Dealer</a></div>
+      <div class="zoom"><a href="Stockhold.php">Stock Hold of Dealer</a></div>
        </div>   
   </div>    
 </body>
