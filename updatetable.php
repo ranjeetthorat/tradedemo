@@ -52,13 +52,14 @@ $cha = $sellcharge + $buycharge;
       $insert = " INSERT INTO 
       trading(cid, cname, sid, sname, buy_bcharge, buyqty, buyprice, buy_total,
        buy_date, sell_bcharge, sell_qty, sell_price, sell_total, sell_date, final_total,
-        complete,status)
+        complete,status,dealerbuy)
       values
       ('$custid','$custname','$sharid','$sname','$buycharge','$buyqty','$buyprice','$yemp',
         '$today','$sellcharge','$buyqty','$sellprice','$buyqty*$sellprice','$sdate','$temp',
-        '$txn','active' ) "; 
+        '$txn','active','$buyprice' ) "; 
          $ins = mysqli_query($connection,$insert);
       //echo $insert;
+      //die();
       echo "</br>";
     
          $upd = "UPDATE trading SET sell_qty='$qtydiff',sell_total='$instotal',sell_bcharge='0'
@@ -68,7 +69,7 @@ $cha = $sellcharge + $buycharge;
    } else {
       $update="UPDATE trading SET buy_bcharge='$buycharge',buyqty='$buyqty',buyprice='$buyprice',
       buy_total='$buytotal',sell_bcharge='$sellcharge',sell_qty='$sellqty',sell_price='$sellprice'
-      ,final_total='$finaltotal',buy_date='$today',complete='$txn' WHERE tid='$tid'";
+      ,final_total='$finaltotal',buy_date='$today',complete='$txn', dealerbuy='$buyprice' WHERE tid='$tid'";
        $result=mysqli_query($connection,$update)  or die( mysqli_error($connection));
 
    }
@@ -100,11 +101,11 @@ $cha = $sellcharge + $buycharge;
       $insert = " INSERT INTO 
       trading(cid, cname, sid, sname, buy_bcharge, buyqty, buyprice, buy_total,
        buy_date, sell_bcharge, sell_qty, sell_price, sell_total, sell_date, final_total,
-        complete,status)
+        complete,status,dealersell)
       values
       ('$custid','$custname','$sharid','$sname','$buycharge','$sellqty','$buyprice','$yemp',
         '$bdate','$sellcharge','$sellqty','$sellprice','$sellqty*$sellprice','$today','$temp',
-        '$txn','active' ) "; 
+        '$txn','active','$sellprice' ) "; 
          $ins = mysqli_query($connection,$insert);
       //echo $insert;
       echo "</br>";
@@ -118,7 +119,7 @@ $cha = $sellcharge + $buycharge;
    else {
     $update="UPDATE trading SET buy_bcharge='$buycharge',buyqty='$buyqty',buyprice='$buyprice',
    sell_bcharge='$sellcharge',sell_qty='$sellqty',sell_price='$sellprice'
-    ,sell_total='$selltotal',final_total='$finaltotal',sell_date='$today',complete='$txn' WHERE tid='$tid'";
+    ,sell_total='$selltotal',final_total='$finaltotal',sell_date='$today',complete='$txn',dealersell='$sellprice' WHERE tid='$tid'";
  
     $result=mysqli_query($connection,$update)  or die( mysqli_error($connection));
    }  

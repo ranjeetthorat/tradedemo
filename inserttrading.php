@@ -29,9 +29,9 @@
         if($selec=="buy")
         {
             $s="INSERT INTO trading (cid,cname,sid,sname,buy_bcharge,buyqty,buyprice,buy_total,buy_date,
-            sell_bcharge,sell_qty,sell_price,sell_total,sell_date,final_total,status)
+            sell_bcharge,sell_qty,sell_price,sell_total,sell_date,final_total,status,dealerbuy)
              VALUES('$cid','$cust_name','$sid','$share_name','$bcharge','$qty','$price','$total','$a',
-             '0','0','0','0','0','0','$status')";
+             '0','0','0','0','0','0','$status','$price')";
     
             $result=mysqli_query($connection,$s) or die( mysqli_error($connection));
             echo $result;
@@ -40,8 +40,8 @@
         else
         {
             $s="INSERT INTO trading  (cid,cname,sid,sname,buy_bcharge,buyqty,buyprice,buy_total,buy_date,
-            sell_bcharge,sell_qty,sell_price,sell_total,sell_date,final_total,status)
- VALUES('$cid','$cust_name','$sid','$share_name','0','0','0','0','0','$bcharge','$qty','$price','$total','$a','0','$status')";
+            sell_bcharge,sell_qty,sell_price,sell_total,sell_date,final_total,status,dealersell)
+ VALUES('$cid','$cust_name','$sid','$share_name','0','0','0','0','0','$bcharge','$qty','$price','$total','$a','0','$status','$price')";
     
             $result=mysqli_query($connection,$s) or die( mysqli_error($connection));
             echo "$result";

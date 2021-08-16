@@ -142,6 +142,7 @@ a{
       <div class="zoom"><a href="customreport.php">Total Reports</a></div>
       <div class="zoom"><a href="missingdealer.php">Missing Trade of Dealer</a></div>
       <div class="zoom"><a href="Stockhold.php">Stock Hold of Dealer</a></div>
+      <div class="zoom"><a href="scripttrade.php">Script wise Dealer report</a></div>
        </div>   
   </div>    
 </body>

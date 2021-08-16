@@ -144,7 +144,7 @@ $todate = $todate + 24*60*60;
     while($row=mysqli_fetch_assoc($result)){
         ?>  
          <form action="dealers.php" method="post">
-           <tr <?php if($row['buy_bcharge'] == 0 || $row['sell_bcharge']==0)echo "class='boldrow'" ?> >
+           <tr <?php if($row['buy_date'] == 0 || $row['sell_date']==0)echo "class='boldrow'" ?> >
             <td ><input class="tid" hidden name="tid" type="text" readonly value="<?php echo $row['tid'];  ?>"></td>
             <td><?php if($row['buy_date']==0) echo "0"; else echo date('Y-m-d',$row['buy_date']); ?></td>
       

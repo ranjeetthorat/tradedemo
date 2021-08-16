@@ -44,6 +44,9 @@
     <li class="nav-item ml-2">
         <a class="nav-link" href="stockhold.php">Stock Hold of Dealer</a>
     </li>
+    <li class="nav-item ml-2">
+        <a class="nav-link" href="scripttrade.php">Script wise report</a>
+    </li>
 </div>
 </nav>
 
