@@ -67,7 +67,7 @@
                     <option value="">Select share name</option>
                   <?php 
                              
-                    $select2="SELECT * FROM share  WHERE status='active'";
+                    $select2="SELECT * FROM share  WHERE status='active' order buy sname";
                     $result2=mysqli_query($connection,$select2);
                   
                     while($data=mysqli_fetch_assoc($result2))

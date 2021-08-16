@@ -61,7 +61,7 @@ $cha = $sellcharge + $buycharge;
       //echo $insert;
       echo "</br>";
     
-         $upd = "UPDATE trading SET sell_qty='$qtydiff',sell_total='$instotal'
+         $upd = "UPDATE trading SET sell_qty='$qtydiff',sell_total='$instotal,sell_bcharge=0'
              WHERE tid='$tid'";
  // echo "$upd";
              $re = mysqli_query($connection,$upd);
@@ -109,7 +109,7 @@ $cha = $sellcharge + $buycharge;
       //echo $insert;
       echo "</br>";
     
-         $upd = "UPDATE trading SET buyqty='$qtydiff',buy_total='$instotal'
+         $upd = "UPDATE trading SET buyqty='$qtydiff',buy_total='$instotal,buy_bcharge=0'
              WHERE tid='$tid'";
  // echo "$upd";
              $re = mysqli_query($connection,$upd);
